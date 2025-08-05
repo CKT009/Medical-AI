@@ -21,12 +21,12 @@ if st.button("Get Diagnosis"):
 
         data = response.json()
         st.write("DEBUG Raw JSON:", data) 
-        
+        output_data = data.get("output", {})
         st.subheader("Symptom Area Detected:")
-        st.write(data.get("symptom_area", "N/A"))
+        st.write(output_data.get("symptom_area", "N/A"))
 
         st.subheader("AI Diagnosis Suggestion:")
-        st.write(data.get("diagnosis", "N/A"))
+        st.write(output_data.get("diagnosis", "N/A"))
 
     except Exception as e:
         st.error(f"Failed to get diagnosis: {e}")
