@@ -20,7 +20,7 @@ if st.button("Get Diagnosis"):
         )
 
         data = response.json()
-        st.write("DEBUG Raw JSON:", data) 
+        #st.write("DEBUG Raw JSON:", data) 
         output_data = data.get("output", {})
         st.subheader("Symptom Area Detected:")
         st.write(output_data.get("symptom_area", "N/A"))
