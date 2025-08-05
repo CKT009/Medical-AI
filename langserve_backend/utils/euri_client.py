@@ -5,8 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv('EURI_API_KEY')
-BASE_URL = os.getenv('BASE_URL')
-
+BASE_URL = "https://api.euron.one/api/v1/euri"
 
 def chat_completion(messagges, model="gpt-4.1-nano", temperature=0.7, max_tokens=1000):
     url = f"{BASE_URL}/chat/completions"
